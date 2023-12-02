@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Day1">
+      <UniqueIdentifier>{d157bd81-aa63-420b-962f-b78ee5bf7b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day1\Inputs">
+      <UniqueIdentifier>{f041024a-6ac5-48aa-b276-f7136e58cd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day2">
+      <UniqueIdentifier>{9e54e3af-25cd-462f-9679-2a68eb94a02c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day2\Inputs">
+      <UniqueIdentifier>{5fb274a5-1ebd-42af-9cf2-142c6f98d66c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Inputs\day1-1.txt">
+      <Filter>Source Files\Day1\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day2-sample.txt">
+      <Filter>Source Files\Day2\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day2-1.txt">
+      <Filter>Source Files\Day1\Inputs</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Day1-1.cpp">
+      <Filter>Source Files\Day1</Filter>
+    </ClCompile>
+    <ClCompile Include="Day1-2.cpp">
+      <Filter>Source Files\Day1</Filter>
+    </ClCompile>
+    <ClCompile Include="Day2-1.cpp">
+      <Filter>Source Files\Day2</Filter>
+    </ClCompile>
+    <ClCompile Include="Day2-2.cpp">
+      <Filter>Source Files\Day2</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
