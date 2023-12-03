@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Day2\Inputs">
       <UniqueIdentifier>{5fb274a5-1ebd-42af-9cf2-142c6f98d66c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Day3">
+      <UniqueIdentifier>{cff82e50-cada-4343-b189-dc38328b30c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day3\Inputs">
+      <UniqueIdentifier>{eddcef9c-cdd8-4e67-8e90-e775add428d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Inputs\day1-1.txt">
@@ -35,6 +41,12 @@
     </Text>
     <Text Include="Inputs\day2-1.txt">
       <Filter>Source Files\Day1\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day3-1.txt">
+      <Filter>Source Files\Day3\Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\day3-sample.txt">
+      <Filter>Source Files\Day3\Inputs</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -47,8 +59,14 @@
     <ClCompile Include="Day2-1.cpp">
       <Filter>Source Files\Day2</Filter>
     </ClCompile>
+    <ClCompile Include="Day3-1.cpp">
+      <Filter>Source Files\Day3</Filter>
+    </ClCompile>
     <ClCompile Include="Day2-2.cpp">
       <Filter>Source Files\Day2</Filter>
+    </ClCompile>
+    <ClCompile Include="Day3-2.cpp">
+      <Filter>Source Files\Day3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
