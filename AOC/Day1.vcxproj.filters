@@ -13,72 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Day1">
-      <UniqueIdentifier>{d157bd81-aa63-420b-962f-b78ee5bf7b70}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day1\Inputs">
-      <UniqueIdentifier>{f041024a-6ac5-48aa-b276-f7136e58cd93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day2">
-      <UniqueIdentifier>{9e54e3af-25cd-462f-9679-2a68eb94a02c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day2\Inputs">
-      <UniqueIdentifier>{5fb274a5-1ebd-42af-9cf2-142c6f98d66c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day3">
-      <UniqueIdentifier>{cff82e50-cada-4343-b189-dc38328b30c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day3\Inputs">
-      <UniqueIdentifier>{eddcef9c-cdd8-4e67-8e90-e775add428d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day4">
-      <UniqueIdentifier>{ba54425c-4268-4c2e-a4a7-8e37de473d74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Day4\Inputs">
-      <UniqueIdentifier>{9b44d7ba-8256-4f34-931f-96a8d0f3f4d6}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Inputs\day1-1.txt">
-      <Filter>Source Files\Day1\Inputs</Filter>
-    </Text>
-    <Text Include="Inputs\day2-sample.txt">
-      <Filter>Source Files\Day2\Inputs</Filter>
-    </Text>
-    <Text Include="Inputs\day2-1.txt">
-      <Filter>Source Files\Day1\Inputs</Filter>
-    </Text>
-    <Text Include="Inputs\day3-1.txt">
-      <Filter>Source Files\Day3\Inputs</Filter>
-    </Text>
-    <Text Include="Inputs\day3-sample.txt">
-      <Filter>Source Files\Day3\Inputs</Filter>
-    </Text>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Day1-1.cpp">
-      <Filter>Source Files\Day1</Filter>
-    </ClCompile>
-    <ClCompile Include="Day1-2.cpp">
-      <Filter>Source Files\Day1</Filter>
-    </ClCompile>
-    <ClCompile Include="Day2-1.cpp">
-      <Filter>Source Files\Day2</Filter>
-    </ClCompile>
-    <ClCompile Include="Day3-1.cpp">
-      <Filter>Source Files\Day3</Filter>
-    </ClCompile>
-    <ClCompile Include="Day2-2.cpp">
-      <Filter>Source Files\Day2</Filter>
-    </ClCompile>
-    <ClCompile Include="Day3-2.cpp">
-      <Filter>Source Files\Day3</Filter>
-    </ClCompile>
-    <ClCompile Include="Day4-1.cpp">
-      <Filter>Source Files\Day4</Filter>
-    </ClCompile>
-    <ClCompile Include="Day4-2.cpp">
-      <Filter>Source Files\Day4</Filter>
-    </ClCompile>
+    <ClInclude Include="AoCSolution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day1Solution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day2Solution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day3Solution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day4Solution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day5Solution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
