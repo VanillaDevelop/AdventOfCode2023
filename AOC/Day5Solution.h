@@ -247,6 +247,27 @@ private:
 					found = true;
 					break;
 				}
+				//mapping is contained in range
+				else if (mapping_start >= start && mapping_end <= end)
+				{
+					//add the whole mapping to next_seed_pairs
+					next_seed_pairs.push_back(mapping_start + transform);
+					next_seed_pairs.push_back(mapping_end + transform);
+					//add the remaining parts of the range to remaining_seeds
+					if (mapping_start > start)
+					{
+						remaining_seeds.push_back(start);
+						remaining_seeds.push_back(mapping_start - 1);
+					}
+					if (mapping_end < end)
+					{
+						remaining_seeds.push_back(mapping_end + 1);
+						remaining_seeds.push_back(end);
+					}
+
+					found = true;
+					break;
+				}
 			}
 
 			//if neither start nor end were found, add the whole range to next seeds
