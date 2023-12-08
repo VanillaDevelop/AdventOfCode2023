@@ -48,7 +48,7 @@ public:
 		std::getline(infile, line);
 		std::vector<std::shared_ptr<GraphNode>> start_nodes = getGraphNetworkPart2(infile);
 
-		int distance = traverseConsecutive(start_nodes, directions);
+		std::size_t distance = traverseConsecutive(start_nodes, directions);
 		std::cout << "Length of traversal: " << distance << std::endl;
 	}
 };
@@ -233,40 +233,102 @@ std::vector<std::shared_ptr<GraphNode>> getGraphNetworkPart2(std::ifstream& inpu
 /// <returns>The number of nodes travelled (distance) until all nodes are end nodes.</returns>
 int traverseConsecutive(std::vector<std::shared_ptr<GraphNode>> start_nodes, std::vector<bool> directions)
 {
-	int distance = 0;
 	std::vector<std::shared_ptr<GraphNode>> current_nodes = start_nodes;
 	bool any_false = true;
-	while (true)
+
+	std::vector<std::pair<int, int>> cycle_info;
+
+	//For each start node
+	for (std::shared_ptr<GraphNode> node : start_nodes)
 	{
-		for (bool direction : directions)
+		int get_to_end = 0;
+		int get_back = 0;
+
+		//Traverse to the end node
+		while (true)
 		{
-			any_false = false;
-			for (int i = 0; i < current_nodes.size(); i++)
+			for (bool direction : directions)
 			{
 				if (direction)
 				{
-					current_nodes[i] = current_nodes[i]->right;
+					node = node->right;
 				}
 				else
 				{
-					current_nodes[i] = current_nodes[i]->left;
+					node = node->left;
 				}
-				if (!(current_nodes[i]->is_end_node))
+				get_to_end++;
+				if (node->is_end_node)
 				{
-					any_false = true;
+					break;
 				}
 			}
-			distance++;
-			if (!any_false)
+			if (node->is_end_node)
 			{
 				break;
 			}
 		}
-		if (!any_false)
+
+		//Traverse until we get to another end node
+		while (true)
 		{
-			break;
+			for (bool direction : directions)
+			{
+				if (direction)
+				{
+					node = node->right;
+				}
+				else
+				{
+					node = node->left;
+				}
+				get_back++;
+				if (node->is_end_node)
+				{
+					break;
+				}
+			}
+			if (node->is_end_node)
+			{
+				break;
+			}
+		}
+
+		//Store cycle info
+		cycle_info.push_back(std::make_pair(get_to_end, get_back));
+	}
+
+	std::size_t current = 0;
+	int min_cycle = INT_MAX;
+	int min_initial = INT_MAX;
+
+	//Find the max initial distance and min cycle distance
+	for (std::pair<int, int> cycle : cycle_info)
+	{
+		if(cycle.second < min_cycle)
+		{
+			min_initial = cycle.first;
+			min_cycle = cycle.second;
 		}
 	}
 
-	return distance;
+	//set initial to min_initial
+	current = min_initial - min_cycle;
+	bool found = false;
+
+	while (!found)
+	{
+		current += min_cycle;
+		found = true;
+		for(auto cycle : cycle_info)
+		{
+			if (((current - cycle.first) % cycle.second) != 0)
+			{
+				found = false;
+				break;
+			}
+		}
+	}
+
+	return current;
 }
