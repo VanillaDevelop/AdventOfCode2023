@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AoCSolution.h" />
+    <ClInclude Include="Day10Solution.h" />
     <ClInclude Include="Day1Solution.h" />
     <ClInclude Include="Day2Solution.h" />
     <ClInclude Include="Day3Solution.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Day6Solution.h" />
     <ClInclude Include="Day7Solution.h" />
     <ClInclude Include="Day8Solution.h" />
+    <ClInclude Include="Day9Solution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
