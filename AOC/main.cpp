@@ -3,6 +3,6 @@
 
 int main()
 {
-	AoCSolution* solution = new Day10Solution();
+	AoCSolution* solution = new Day11Solution();
 	solution->RunSecondPart("Inputs/input.txt");
 }
