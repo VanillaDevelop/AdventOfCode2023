@@ -1,8 +1,8 @@
 #include "AoCSolution.h"
-#include "Day12Solution.h"
+#include "Day13Solution.h"
 
 int main()
 {
-	AoCSolution* solution = new Day12Solution();
+	AoCSolution* solution = new Day13Solution();
 	solution->RunSecondPart("Inputs/input.txt");
 }
