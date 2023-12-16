@@ -47,3 +47,24 @@ It turns out this implementation was also very helpful for the second part. Effe
 Unlike on day 10, my solution for part 1 really did not help me with part 2 at all here. I physically built an expanded grid of the "universe", hoping that it would come in handy for part 2. I overcomplicated my logic quite a bit, and still stubbornly refused to use data structures that would probably trivialize a lot of this work, so it took me a while to finish this. 
 
 When I saw part two, I immediately understood how I was supposed to solve part 1 - simply count the number of rows and columns that are empty, and add an additional distance value for them. Once I saw the problem, it was a very easy implementation, but I am slightly annoyed that I spent so much time trying to make the expanded grid work...
+
+### Day 12
+Over the last days, I started somewhat consistently moving towards creating my functions outside the class itself and forward declaring them for the class to use. This may not be the ideal solution, since these functions exist outside any defined namespace or class, but it's not much of a problem for the purpose of these challenges. 
+
+Today's problem is a relatively straightforward task of recursively determining the amount of possible solutions for a given set of unknown spaces, similar to a nonogram. I did not have many problems determining that this is a recursive problem, which was enough to solve part one, but I did have to check some existing solutions to notice that in order to solve part two, I would need to use memoization. This is because in many cases, we will need to recompute the amount of possible solutions for a smaller substring, and we can (and sort of have to, to solve part 2) cache those results to massively decrease the computation time.
+
+I did use C++'s feature of allowing reference call parameters here to avoid needlessly copying strings into the recursive call - in fact, the whole string can be processed with just a single instance of it. Maybe (probably) the compiler would do this on its own anyway, but I was proud of myself for at least thinking of it actively. You gotta take the small wins sometimes.
+
+### Day 13
+This solution is relatively simple. I thought part 2 might end up having a super large grid that would make it impossible to check every single row/column for symmetry, so in my initial functions (tryFind[Horizontal/Vertical]Symmetry), I tried to first find "candidate rows/columns" based on whether they have direct symmetry between the two rows they encompass, which can be done in a single pass through the grid, i.e., O(n) rather than O(n^2) for checking symmetry across all lines. However, this ended up not being necessary for part 2, so it is not implemented in those functions. Part 2 itself was very simple, since we can just check if there is a single inequality in the symmetry rather than checking for 0 errors. If anything, all the functions in my code kind of do the same thing here, so it would be worth cleaning them up a bunch.
+
+### Day 14
+On this day, it is basically again all about memoization. Instead of implementing four different "tilt" functions, I only have a function that tilts all rocks to the left, and then rotate the grid to match the desired direction the rocks should tilt. This probably doesn't actually save any computation (since manipulating the string to rotate is probably quite costly), but it could be made more efficient with better data-structures, and saves a bunch of duplicate code.
+
+Part two again requires us to use a memoization map. However, this time we simply need to track how long it takes us to find a duplicate state. When we find a duplicate state, we know the loop size will stay consistent, since the process is deterministic, and can use this to skip the vast majority of iterations. I have to admit that it was quite difficult to think of this, as the grid at first looks too large to repeat, but it turns out that after about 50-200 iterations, depending on sample input, the grid will in fact repeat. 
+
+### Day  15
+In principle, this challenge was all about the implementation of a hash map. I wrote a relatively simple hash-map implementation that uses an array as a container for a linked list of items at each iteration. Of course, in C++, you could use way more convenient data structures, but I thought this was a neat challenge to implement it using relatively basic data types.
+
+### Day 16
+This challenge can essentially be solved using "brute force". To avoid loops and duplicate beams, I use a set that keeps track of any time a laser was already encountered at [x,y,direction], which tells us that all tiles that this laser will eventually pass through are already energized, and we can basically disregard it. The rest of the challenge is "basic" ray tracing through an array.
